@@ -2,7 +2,9 @@
 title: "Reporte 2 - Joshué Ricalde"
 author: "Joshué Helí Ricalde Guerrero"
 date: "1/7/2020"
-output: github_document
+output: 
+ html_document:
+  keep_md: true
 runtime: shiny
 ---
 
