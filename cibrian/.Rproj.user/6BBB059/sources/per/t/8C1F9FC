@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1610479696157.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "773760667",
+    "id" : "8C1F9FC",
+    "lastKnownWriteTime" : 1610481510,
+    "last_content_update" : 1610481510072,
+    "path" : "~/Documents/cibrian/covid-mb.R",
+    "project_path" : "covid-mb.R",
+    "properties" : {
+        "cursorPosition" : "83,0",
+        "scrollLine" : "74",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

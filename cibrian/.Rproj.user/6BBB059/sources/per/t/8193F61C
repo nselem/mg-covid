@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1610481277925.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "447551063",
+    "id" : "8193F61C",
+    "lastKnownWriteTime" : 1608701756,
+    "last_content_update" : 1608701756,
+    "path" : "~/Documents/kalakmul/kalak-library.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "102,28",
+        "scrollLine" : "91"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

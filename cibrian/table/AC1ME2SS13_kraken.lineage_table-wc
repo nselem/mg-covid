@@ -1,0 +1,143 @@
+OTU	superkingdom	phylum	class	order	family	genus	species	subspecies	subspecies_2
+0								
+2	Bacteria							
+158	Bacteria	Spirochaetes	Spirochaetia	Spirochaetales	Spirochaetaceae	Treponema	Treponema denticola	
+199	Bacteria	Proteobacteria	Epsilonproteobacteria	Campylobacterales	Campylobacteraceae	Campylobacter	Campylobacter concisus	
+286	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas		
+470	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	Acinetobacter baumannii	
+482	Bacteria	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Neisseria		
+485	Bacteria	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Neisseria	Neisseria gonorrhoeae	
+487	Bacteria	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Neisseria	Neisseria meningitidis	
+490	Bacteria	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Neisseria	Neisseria sicca	
+495	Bacteria	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Neisseria	Neisseria elongata	
+550	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Enterobacter	Enterobacter cloacae	
+712	Bacteria	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae			
+724	Bacteria	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Haemophilus		
+726	Bacteria	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Haemophilus	Haemophilus haemolyticus	
+727	Bacteria	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Haemophilus	Haemophilus influenzae	
+729	Bacteria	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Haemophilus	Haemophilus parainfluenzae	
+732	Bacteria	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Aggregatibacter	Aggregatibacter aphrophilus	
+837	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Porphyromonadaceae	Porphyromonas	Porphyromonas gingivalis	
+838	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella		
+860	Bacteria	Fusobacteria	Fusobacteriia	Fusobacteriales	Fusobacteriaceae	Fusobacterium	Fusobacterium periodonticum	
+976	Bacteria	Bacteroidetes						
+1017	Bacteria	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Capnocytophaga	Capnocytophaga gingivalis	
+1224	Bacteria	Proteobacteria						
+1236	Bacteria	Proteobacteria	Gammaproteobacteria					
+1280	Bacteria	Firmicutes	Bacilli	Bacillales	Staphylococcaceae	Staphylococcus	Staphylococcus aureus	
+1301	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus		
+1302	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus gordonii	
+1303	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus oralis	
+1304	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus salivarius	
+1305	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus sanguinis	
+1308	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus thermophilus	
+1313	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus pneumoniae	
+1318	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus parasanguinis	
+1328	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus anginosus	
+1465	Bacteria	Firmicutes	Bacilli	Bacillales	Paenibacillaceae	Brevibacillus	Brevibacillus laterosporus	
+1813	Bacteria	Actinobacteria	Actinobacteria	Pseudonocardiales	Pseudonocardiaceae	Amycolatopsis		
+28037	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus mitis	
+28108	Bacteria	Proteobacteria	Gammaproteobacteria	Alteromonadales	Alteromonadaceae	Alteromonas	Alteromonas macleodii	
+28118	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Odoribacteraceae	Odoribacter	Odoribacter splanchnicus	
+28131	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella	Prevotella intermedia	
+28132	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella	Prevotella melaninogenica	
+28384								
+28449	Bacteria	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Neisseria	Neisseria subflava	
+29384	Bacteria	Firmicutes	Bacilli	Bacillales	Staphylococcaceae	Staphylococcus	Staphylococcus kloosii	
+29391	Bacteria	Firmicutes	Bacilli	Bacillales		Gemella	Gemella morbillorum	
+29430	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	Acinetobacter haemolyticus	
+29465	Bacteria	Firmicutes	Negativicutes	Veillonellales	Veillonellaceae	Veillonella		
+29466	Bacteria	Firmicutes	Negativicutes	Veillonellales	Veillonellaceae	Veillonella	Veillonella parvula	
+33033	Bacteria	Firmicutes	Tissierellia	Tissierellales	Peptoniphilaceae	Parvimonas	Parvimonas micra	
+35841	Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae	Bacillus	Bacillus thermoamylovorans	
+40041	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus equi	Streptococcus equi subsp. zooepidemicus
+43675	Bacteria	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Rothia	Rothia mucilaginosa	
+44283	Bacteria	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Pasteurella	Pasteurella multocida	Pasteurella multocida subsp. multocida
+45243	Bacteria	Bacteroidetes	Flavobacteriia	Flavobacteriales	Flavobacteriaceae	Capnocytophaga	Capnocytophaga haemolytica	
+52773	Bacteria	Actinobacteria	Actinobacteria	Actinomycetales	Actinomycetaceae	Schaalia	Schaalia meyeri	
+72407	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Klebsiella	Klebsiella pneumoniae	Klebsiella pneumoniae subsp. pneumoniae
+75682	Bacteria	Proteobacteria	Betaproteobacteria	Burkholderiales	Oxalobacteraceae			
+76123	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella	Prevotella enoeca	
+76857	Bacteria	Fusobacteria	Fusobacteriia	Fusobacteriales	Fusobacteriaceae	Fusobacterium	Fusobacterium nucleatum	Fusobacterium nucleatum subsp. polymorphum
+86661	Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae	Bacillus		
+106592	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Ensifer	Ensifer adhaerens	
+113107	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus australis	
+114527	Bacteria	Firmicutes	Clostridia	Clostridiales	Clostridiales Family XIII. Incertae Sedis	Mogibacterium	Mogibacterium diversum	
+134287	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae		secondary endosymbiont of Heteropsylla cubana	
+135735	Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae	Bacillus	Bacillus endophyticus	
+155615	Bacteria	Fusobacteria	Fusobacteriia	Fusobacteriales	Fusobacteriaceae	Fusobacterium	Fusobacterium nucleatum	Fusobacterium nucleatum subsp. vincentii
+171549	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales				
+195253	Bacteria	Cyanobacteria		Synechococcales	Synechococcaceae	Synechococcus	Synechococcus sp. PCC 6312	
+204773	Bacteria	Proteobacteria	Betaproteobacteria	Burkholderiales	Oxalobacteraceae	Herminiimonas	Herminiimonas arsenicoxydans	
+248315	Bacteria	Firmicutes	Negativicutes	Veillonellales	Veillonellaceae	Veillonella	Veillonella rodentium	
+316058	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Bradyrhizobiaceae	Rhodopseudomonas	Rhodopseudomonas palustris	
+320371	Bacteria	Proteobacteria	Betaproteobacteria	Burkholderiales	Burkholderiaceae	Burkholderia	Burkholderia pseudomallei	
+320787	Bacteria	Bacteroidetes	Cytophagia	Cytophagales	Cyclobacteriaceae	Cyclobacterium	Cyclobacterium amurskyense	
+326523	Bacteria	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Neisseria	Neisseria zoodegmatis	
+332101	Bacteria	Firmicutes	Clostridia	Clostridiales	Clostridiaceae	Clostridium	Clostridium drakei	
+347253	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus salivarius	
+360104	Bacteria	Proteobacteria	Epsilonproteobacteria	Campylobacterales	Campylobacteraceae	Campylobacter	Campylobacter concisus	
+365659	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus mitis	
+388919	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus sanguinis	
+430522	Bacteria	Bacteroidetes	Sphingobacteriia	Sphingobacteriales	Sphingobacteriaceae	Pedobacter	Pedobacter steynii	
+467705	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus gordonii	
+489653	Bacteria	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Neisseria	Neisseria lactamica	
+516950	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus pneumoniae	
+521095	Bacteria	Actinobacteria	Coriobacteriia	Coriobacteriales	Atopobiaceae	Lancefieldella	Lancefieldella parvula	
+523794	Bacteria	Fusobacteria	Fusobacteriia	Fusobacteriales	Leptotrichiaceae	Leptotrichia	Leptotrichia buccalis	
+526988	Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae	Bacillus	Bacillus cereus	
+526991	Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae	Bacillus	Bacillus cereus	
+544580	Bacteria	Actinobacteria	Actinobacteria	Actinomycetales	Actinomycetaceae	Actinomyces	Actinomyces oris	
+575614	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella	Prevotella sp. oral taxon 299	
+617123	Bacteria	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Lachnoanaerobaculum	Lachnoanaerobaculum umeaense	
+649349	Bacteria	Bacteroidetes	Cytophagia	Cytophagales	Cytophagaceae	Leadbetterella	Leadbetterella byssophila	
+680646	Bacteria	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Rothia	Rothia mucilaginosa	
+708126	Bacteria	Firmicutes	Bacilli	Lactobacillales	Carnobacteriaceae	Jeotgalibaca	Jeotgalibaca dankookensis	
+712122	Bacteria	Actinobacteria	Actinobacteria	Actinomycetales	Actinomycetaceae	Actinomyces	Actinomyces sp. oral taxon 414	
+712310	Bacteria	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Haemophilus	Haemophilus sp. oral taxon 036	
+712357	Bacteria	Fusobacteria	Fusobacteriia	Fusobacteriales	Leptotrichiaceae	Leptotrichia	Leptotrichia sp. oral taxon 212	
+712368	Bacteria	Fusobacteria	Fusobacteriia	Fusobacteriales	Leptotrichiaceae	Leptotrichia	Leptotrichia sp. oral taxon 498	
+712624	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus sp. oral taxon 064	
+712633	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus sp. oral taxon 431	
+712710	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Tannerellaceae	Tannerella	Tannerella sp. oral taxon HOT-286	
+712991	Bacteria	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae		Lachnospiraceae bacterium oral taxon 500	
+755178	Bacteria	Cyanobacteria		Chroococcales	Cyanobacteriaceae	Cyanobacterium	Cyanobacterium aponinum	
+760570	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus parasanguinis	
+762948	Bacteria	Actinobacteria	Actinobacteria	Micrococcales	Micrococcaceae	Rothia	Rothia dentocariosa	
+767029	Bacteria	Actinobacteria	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Pseudopropionibacterium	Pseudopropionibacterium propionicum	
+767031	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella	Prevotella denticola	
+862965	Bacteria	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Haemophilus	Haemophilus parainfluenzae	
+888057	Bacteria	Proteobacteria	Gammaproteobacteria	Pasteurellales	Pasteurellaceae	Aggregatibacter	Aggregatibacter segnis	
+888727	Bacteria	Firmicutes	Clostridia	Clostridiales	Clostridiales Family XIII. Incertae Sedis		[Eubacterium] sulci	
+889201	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus cristatus	
+908937	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella	Prevotella dentalis	
+927666	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus oralis	
+944547	Bacteria	Proteobacteria	Epsilonproteobacteria	Campylobacterales	Campylobacteraceae		Arcobacter sp. L	
+1048332	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus salivarius	
+1054460	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus pseudopneumoniae	
+1077464	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus oralis	Streptococcus oralis subsp. tigurinus
+1114965	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus parasanguinis	
+1122984	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella	Prevotella intermedia	
+1156431	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus sp. I-G2	
+1177574	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella	Prevotella jejuni	
+1212491	Bacteria	Proteobacteria	Gammaproteobacteria	Legionellales	Legionellaceae	Legionella	Legionella fallonii	
+1236517	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella	Prevotella fusca	
+1236518	Bacteria	Bacteroidetes	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella	Prevotella scopos	
+1298881	Bacteria	Proteobacteria	Gammaproteobacteria	Alteromonadales	Idiomarinaceae		Idiomarinaceae bacterium HL-53	
+1379908	Bacteria	Bacteroidetes	Cytophagia	Cytophagales	Hymenobacteraceae	Rufibacter		
+1433513	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus gwangjuense	
+1499308	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus	Paracoccus mutanolyticus	
+1539298	Bacteria	Spirochaetes	Spirochaetia	Spirochaetales	Spirochaetaceae	Treponema	Treponema sp. OMZ 838	
+1658672	Bacteria	Proteobacteria	Betaproteobacteria	Burkholderiales	Comamonadaceae	Ottowia	Ottowia sp. oral taxon 894	
+1670800	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Phyllobacteriaceae	Mesorhizobium	Mesorhizobium oceanicum	
+1759399	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus sp. A12	
+1839799	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus sp. FDAARGOS_192	
+1853278	Bacteria	Proteobacteria	Betaproteobacteria	Neisseriales	Neisseriaceae	Neisseria	Neisseria chenwenguii	
+1892404	Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae	Bacillus	Bacillus sp. ABP14	
+1902136	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus sp. NPS 308	
+1973481	Bacteria	Cyanobacteria		Nostocales	Aphanizomenonaceae	Dolichospermum	Dolichospermum compactum	
+1974213	Bacteria	Chlorobi	Chlorobia	Chlorobiales	Chlorobiaceae	Prosthecochloris	Prosthecochloris sp. HL-130-GSB	
+1986146	Bacteria	Proteobacteria	Deltaproteobacteria	Desulfobacterales	Desulfobulbaceae	Desulfobulbus	Desulfobulbus oralis	
+2021971	Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus respiraculi	
+2304594	Bacteria	Proteobacteria	Gammaproteobacteria	Alteromonadales	Alteromonadaceae	Marinobacter	Marinobacter sp. Arc7-DN-1	
+2341117	Bacteria	Bacteroidetes	Chitinophagia	Chitinophagales	Chitinophagaceae	Arachidicoccus	Arachidicoccus soli	
