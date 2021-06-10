@@ -243,6 +243,167 @@ ggplot(data = deepn, aes(y= reads, x = samples))+
 
 ###### Figure 1. Depth of our samples with an arbitrary threshold line. 
 
+By this result, we see that the sample SS09 is underrepresented so we will leave it out of the analysis. 
+Let's use the next lines of code to take its information out of the metadata file
+and out of our phyloseq object:
+~~~
+meta <- meta[-13,]
+
+covid.otu <- covid@otu_table@.Data
+covid.otu <- as.data.frame(covid.otu)
+covid.otu <- select(covid.otu, -13)
+
+colnames(covid.otu) <- row.names(meta)
+
+covid.otu <- otu_table(covid.otu, taxa_are_rows = TRUE)
+
+covid.tax <- covid@tax_table@.Data
+covid.tax <- tax_table(covid.tax)
+
+covid <- merge_phyloseq(covid.otu, covid.tax,meta)
+~~~
+{: .language-r}
+
+You can see that we needed to subset the individual parts of our phyloseq
+file (otu_table, tax_table, sam_data), reassign them to a phyloseq format, and finally merged them
+into a new covid phyloseq object.
+
+### Normalization of the data
+
+With our trimmed and selected samples. We need to normalize them in order to compare them
+and do the analysis. In order to normalize our data, we used code and
+knowledge provided by [McMurdie et al., 2014](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003531). We highly recommend you to
+give their paper a review. But in the mean time, we used this part of their code, a function:
+~~~
+edgeRnorm = function(physeq, ...) {
+  require("edgeR")
+  require("phyloseq")
+  # physeq = simlist[['55000_1e-04']] z0 = simlisttmm[['55000_1e-04']] physeq
+  # = simlist[['1000_0.2']] z0 = simlisttmm[['1000_0.2']] Enforce orientation.
+  if (!taxa_are_rows(physeq)) {
+    physeq <- t(physeq)
+  }
+  x = as(otu_table(physeq), "matrix")
+  # See if adding a single observation, 1, everywhere (so not zeros) prevents
+  # errors without needing to borrow and modify calcNormFactors (and its
+  # dependent functions) It did. This fixed all problems.  Can the 1 be
+  # reduced to something smaller and still work?
+  x = x + 1
+  # Now turn into a DGEList
+  y = edgeR::DGEList(counts = x, remove.zeros = TRUE)
+  # Perform edgeR-encoded normalization, using the specified method (...)
+  z = edgeR::calcNormFactors(y, ...)
+  # A check that we didn't divide by zero inside `calcNormFactors`
+  if (!all(is.finite(z$samples$norm.factors))) {
+    stop("Something wrong with edgeR::calcNormFactors on this data, non-finite $norm.factors")
+  }
+  # Don't need the following additional steps, which are also built-in to some
+  # of the downstream distance methods. z1 = estimateCommonDisp(z) z2 =
+  # estimateTagwiseDisp(z1)
+  return(z)
+}
+
+z<- edgeRnorm(covid, method = "TMM")
+str(z)
+~~~
+{: .language-r}
+~~~
+Formal class 'DGEList' [package "edgeR"] with 1 slot
+  ..@ .Data:List of 2
+  .. ..$ : num [1:3851, 1:31] 147378 14 10 8 9 ...
+  .. .. ..- attr(*, "dimnames")=List of 2
+  .. .. .. ..$ : chr [1:3851] "573" "571" "1463165" "1134687" ...
+  .. .. .. ..$ : chr [1:31] "SS07" "SS03" "SS02" "SS05" ...
+  .. ..$ :'data.frame':	31 obs. of  3 variables:
+  .. .. ..$ group       : Factor w/ 1 level "1": 1 1 1 1 1 1 1 1 1 1 ...
+  .. .. ..$ lib.size    : num [1:31] 569552 1430292 1997127 3442643 1241628 ...
+  .. .. ..$ norm.factors: num [1:31] 1.687 1.06 0.839 0.949 1.168 ...
+~~~
+{: .output}
+
+We obtained a DGEList object that we need to transform into an object that phyloseq can read,
+and merge. Again, we will use the `otu_table` and `merge_phyloseq` command:
+~~~
+covid.otu2 <- otu_table(z@.Data[[1]], taxa_are_rows = TRUE)
+covid2 <- merge_phyloseq(covid.otu2, covid.tax,meta)
+~~~
+{: .language-r}
+
+We will transform the absolute counts to relative abundance so as to compare 
+the samples between them. We will use a useful command in the phyloseq package`transform_sample_counts` to accomplish this:
+~~~
+head(covid2@otu_table@.Data)[,c(1:6)]
+~~~
+{: .language-r}
+~~~
+          SS07   SS03   SS02   SS05   SS06  SS01
+573     147378 117636 106001 111841 109690 96293
+571         14     20     31     51     18    14
+1463165     10      9     14      6     10     9
+1134687      8      5      6     12      5     7
+548          9     10     20     49     15     4
+2026240      5      7      5     11      1     3
+~~~
+{: .output}
+~~~
+covid2 <- transform_sample_counts(physeq = covid2, function(x) x*100/sum(x))
+head(covid2@otu_table@.Data)[,c(1:6)]
+~~~
+{: .language-r}
+~~~
+                SS07         SS03         SS02         SS05         SS06         SS01
+573     25.876127202 8.2246142746 5.3076744744 3.2486958421 8.834369e+00 2.173912e+01
+571      0.002458072 0.0013983159 0.0015522298 0.0014814199 1.449710e-03 3.160642e-03
+1463165  0.001755766 0.0006292421 0.0007010070 0.0001742847 8.053942e-04 2.031841e-03
+1134687  0.001404613 0.0003495790 0.0003004316 0.0003485694 4.026971e-04 1.580321e-03
+548      0.001580189 0.0006991579 0.0010014386 0.0014233250 1.208091e-03 9.030405e-04
+2026240  0.000877883 0.0004894106 0.0002503596 0.0003195219 8.053942e-05 6.772804e-04
+~~~
+{: .output}
+
+## Beta diversity analysis
+
+Phyloseq have a useful catalog of functions, among them is `ordinate`, which lead you
+to construct a distance matrix for beta diversity analysis, with a desired `method` 
+and distance `metric`. We will use [NMDS](https://academic.oup.com/bioinformatics/article/21/6/730/199398) as our method, and [Bray-Curtis](http://www.pelagicos.net/MARS6300/readings/Bray_&_Curtis_1957.pdf) as our distance metric.
+There is a sensible reason for this, but a discussion on that issue is beyond the scope of this little document. Let's just mention,
+that you can display all the distance metrics phyloseq can use by typing the command `distanceMethodList`
+~~~
+covid.ord <- ordinate(physeq = covid2,method = "NMDS", distance = "bray")
+head(covid.ord$points)
+~~~
+{: .language-r}
+~~~
+           MDS1        MDS2
+SS07 -0.2373059  0.06957890
+SS03 -0.2015262 -0.01158747
+SS02 -0.1498378  0.02389948
+SS05 -0.1049601 -0.11142705
+SS06 -0.1201024 -0.15001822
+SS01 -0.1104110  0.15863121
+~~~
+{: .output}
+
+Now we have a two dimentional representation of the diversity among our data. We will use `ggplot2` to 
+plot it:
+~~~
+plot_ordination(covid2, covid.ord, color = "Covid") +
+  stat_ellipse(geom = "polygon", alpha= 0.2,aes(fill=Covid),
+               type = "norm", linetype = 5,size = 2) +
+  scale_fill_manual(values=c("#35978f", "#762a83", "#1b7837"))+
+  theme_bw()+
+  geom_point(size=4, alpha=0.8) +
+  scale_color_manual(values=c("#35978f", "#762a83", "#1b7837")) +
+  theme_bw()+
+  labs(title = "NMDS - Bray-Curtis")
+~~~
+{: .language-r}
+
+![image](https://user-images.githubusercontent.com/67386612/121611145-36f7bd80-ca1d-11eb-82b8-ebd2289166fe.png)
+
+##### Figure 2. Beta diversity by NMDS with Bray-Curtis distance of the data
+
+In order to use vegan for the multivariate analysis, we will extract our data from the phyloseq objects
 ~~~
 ~~~
 {: .language-r}
