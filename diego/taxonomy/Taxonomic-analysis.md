@@ -6,11 +6,10 @@ title: "Analysis of taxonomic assignation data from a Covid project"
 ---
 
 # Covid project. Correlation of mouth micorbiome diversity with covid infection
+![image](https://user-images.githubusercontent.com/67386612/121607065-01e76d00-ca15-11eb-9a62-94f5b034646a.png)
 
 *Words are a weapon stronger than he knows. And onfs are even greater. The words wake the mind. The melody wakes the heart.
-I came from a people of song and dance. I do not nedd him to tell me the power of words. But I smile nonetheless. 
-
-Let's learn how to sing and dance*
+I came from a people of song and dance. I do not nedd him to tell me the power of words. But I smile nonetheless. Let's learn how to sing and dance*
 	-Pierce Brown
 
 I entitled myself to support a great and diverse team in searching for clues about how the microbiome affects the covid symptomatology.
