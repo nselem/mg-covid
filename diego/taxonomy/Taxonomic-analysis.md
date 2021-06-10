@@ -6,10 +6,12 @@ title: "Analysis of taxonomic assignation data from a Covid project"
 ---
 
 # Covid project. Correlation of mouth micorbiome diversity with covid infection
+
 ![image](https://user-images.githubusercontent.com/67386612/121607065-01e76d00-ca15-11eb-9a62-94f5b034646a.png)
 
-*Words are a weapon stronger than he knows. And onfs are even greater. The words wake the mind. The melody wakes the heart.
-I came from a people of song and dance. I do not nedd him to tell me the power of words. But I smile nonetheless. Let's learn how to sing and dance*
+*Words are a weapon stronger than he knows. And songs are even greater. The words wake the mind. The melody wakes the heart.
+I came from a people of song and dance. I do not need him to tell me the power of words. But I smile nonetheless. Let's learn how to sing and dance*
+
 	-Pierce Brown
 
 I entitled myself to support a great and diverse team in searching for clues about how the microbiome affects the covid symptomatology.
@@ -74,27 +76,13 @@ head(covid@tax_table@.Data)
 ~~~
 {: .language-r}
 ~~~
-        Rank1         Rank2              
-573     "k__Bacteria" "p__Proteobacteria"
-571     "k__Bacteria" "p__Proteobacteria"
-1463165 "k__Bacteria" "p__Proteobacteria"
-1134687 "k__Bacteria" "p__Proteobacteria"
-548     "k__Bacteria" "p__Proteobacteria"
-2026240 "k__Bacteria" "p__Proteobacteria"
-        Rank3                   
-573     "c__Gammaproteobacteria"
-571     "c__Gammaproteobacteria"
-1463165 "c__Gammaproteobacteria"
-1134687 "c__Gammaproteobacteria"
-548     "c__Gammaproteobacteria"
-2026240 "c__Gammaproteobacteria"
-        Rank4                 Rank5                  
-573     "o__Enterobacterales" "f__Enterobacteriaceae"
-571     "o__Enterobacterales" "f__Enterobacteriaceae"
-1463165 "o__Enterobacterales" "f__Enterobacteriaceae"
-1134687 "o__Enterobacterales" "f__Enterobacteriaceae"
-548     "o__Enterobacterales" "f__Enterobacteriaceae"
-2026240 "o__Enterobacterales" "f__Enterobacteriaceae"
+        Rank1         Rank2               Rank3                    Rank4                 Rank5                  
+573     "k__Bacteria" "p__Proteobacteria" "c__Gammaproteobacteria" "o__Enterobacterales" "f__Enterobacteriaceae"
+571     "k__Bacteria" "p__Proteobacteria" "c__Gammaproteobacteria" "o__Enterobacterales" "f__Enterobacteriaceae"
+1463165 "k__Bacteria" "p__Proteobacteria" "c__Gammaproteobacteria" "o__Enterobacterales" "f__Enterobacteriaceae"
+1134687 "k__Bacteria" "p__Proteobacteria" "c__Gammaproteobacteria" "o__Enterobacterales" "f__Enterobacteriaceae"
+548     "k__Bacteria" "p__Proteobacteria" "c__Gammaproteobacteria" "o__Enterobacterales" "f__Enterobacteriaceae"
+2026240 "k__Bacteria" "p__Proteobacteria" "c__Gammaproteobacteria" "o__Enterobacterales" "f__Enterobacteriaceae"
         Rank6           Rank7               
 573     "g__Klebsiella" "s__pneumoniae"     
 571     "g__Klebsiella" "s__oxytoca"        
@@ -191,6 +179,69 @@ tax_table()   Taxonomy Table:    [ 3851 taxa by 7 taxonomic ranks ]
 ~~~
 {: .output}
 
+### Getting rid of the data that will bias/deviate our analysis
+
+It is common to find reads that were assigned to another kingdom apart from bacteria. Also, 
+it is not rare to have some mitochondrial and Chloroplast reads in metagenome
+data. We will see if this is the case:
+~~~
+summary(covid@tax_table@.Data[,1] == "Bacteria")
+summary(covid@tax_table@.Data[,5] != "mitocondria")
+summary(covid@tax_table@.Data[,3] != "Chloroplast")
+~~~
+{: .language-r}
+~~~
+   Mode    TRUE 
+logical    3851 
+
+   Mode    TRUE 
+logical    3851 
+
+   Mode    TRUE 
+logical    3851 
+~~~
+{: .output}
+
+Luckily, we did not find any clue of misleading assigned reads. In the case that we have to face them, we could have used `subset_taxa` command to get rid of them:
+~~~
+covid <- subset_taxa(covid, Kingdom == "Bacteria")
+covid <- subset_taxa(covid, Family != "mitocondria" & Class != "Chloroplast")
+~~~
+{: .language-r}
+
+Another point to take into account is the depth of our sequencing, and how is distributed along with our samples. 
+We will create a data.frame to allocate the data needed to see this information with `ggplot2`:
+~~~
+deepn <- data.frame(
+  samples=as.character(map(strsplit(colnames(covid@otu_table@.Data), "_"),1)),
+  reads= sample_sums(covid))
+str(deepn)
+~~~
+{: .language-r}
+~~~
+'data.frame':	32 obs. of  2 variables:
+ $ samples: chr  "SS07" "SS03" "SS02" "SS05" ...
+ $ reads  : num  565701 1426441 1993276 3438792 1237777 ...
+~~~
+{: .output}
+
+With the next command, we can create the plot with `ggplot2`. We will use a bar `geom` along with other specifications:
+~~~
+ggplot(data = deepn, aes(y= reads, x = samples))+
+  geom_bar(stat="identity", fill="violetred4") + theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  geom_hline(yintercept = 4242198, col= "cyan3", size = 1.5, alpha = 0.5) +
+  xlab("Samples") + ylab("Number of reads") +
+  ggtitle("Deepness of covid libraries") +
+  theme(axis.text.x = element_text(size = 12, vjust = 0.5),
+        axis.text.y = element_text(size = 12),
+        axis.title=element_text(size=14))
+~~~
+{: .language-r}
+
+![image](https://user-images.githubusercontent.com/67386612/121609078-c2228480-ca18-11eb-8573-b9a56f105345.png)
+
+###### Figure 1. Depth of our samples with an arbitrary threshold line. 
 
 ~~~
 ~~~
