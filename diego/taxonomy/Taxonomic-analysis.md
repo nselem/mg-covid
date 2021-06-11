@@ -403,11 +403,64 @@ plot_ordination(covid2, covid.ord, color = "Covid") +
 
 ##### Figure 2. Beta diversity by NMDS with Bray-Curtis distance of the data
 
-In order to use vegan for the multivariate analysis, we will extract our data from the phyloseq objects
+## Multivariate analysis of variance with vegan
+In order to use vegan for the multivariate analysis, we will extract our data from the phyloseq objects, and we will use the 
+command `t()` to obtain the transposed data-frame as `vegan` needs it:
 ~~~
+d.covid <- t(covid2@otu_table@.Data)
+~~~
+{: .language-r}
+
+Also, we will extract the metadata from our `meta` object, and put it in a new data-frame:
+~~~
+meta.covid <- data.frame(Age = as.factor(covid2@sam_data@.Data[[5]]),
+                         Sex = as.factor(covid2@sam_data@.Data[[2]]),
+                         Pacient = as.factor(covid2@sam_data@.Data[[3]]),
+                         Symt = as.factor(covid2@sam_data@.Data[[6]]),
+                         Diag = as.factor(covid2@sam_data@.Data[[7]]),
+                         Covid = as.factor(covid2@sam_data@.Data[[10]]))
+str(meta.covid)
 ~~~
 {: .language-r}
 ~~~
+'data.frame':	31 obs. of  6 variables:
+ $ Age    : Factor w/ 5 levels "<18",">55","20-30",..: 3 3 3 4 4 4 2 4 3 5 ...
+ $ Sex    : Factor w/ 2 levels "F","M": 1 1 1 1 2 2 2 1 2 2 ...
+ $ Pacient: Factor w/ 2 levels "Negative","Positive": 2 2 2 2 2 2 2 2 2 2 ...
+ $ Symt   : Factor w/ 2 levels "NO","SI": 2 2 2 2 1 1 1 2 1 1 ...
+ $ Diag   : Factor w/ 2 levels "Negative","Positive": 2 1 1 1 1 1 1 1 1 2 ...
+ $ Covid  : Factor w/ 3 levels "Negative","P-Negative",..: 3 2 2 2 2 2 2 2 2 3 ...
 ~~~
 {: .output}
+
+Finally, with the function `adonis`, we can se the relationship that has a specific variable over the variance of
+the data(abundances):
+~~~
+adonis(d.covid ~ Diag , data = meta.covid, permutations = 999)
+~~~
+{: .language-r}
+~~~
+Call:
+adonis(formula = d.covid ~ Diag, data = meta.covid, permutations = 999) 
+
+Permutation: free
+Number of permutations: 999
+
+Terms added sequentially (first to last)
+
+          Df SumsOfSqs MeanSqs F.Model      R2 Pr(>F)
+Diag       1    0.2328 0.23283  1.2921 0.04266  0.236
+Residuals 29    5.2255 0.18019         0.95734       
+Total     30    5.4583                 1.00000
+~~~
+{: .output}
+
+Repeating the last command with different equations as models, we can construct a table where the information concerning the results can be allotted
+
+###### Table 1. Results from the analysis with adonis
+
+![image](https://user-images.githubusercontent.com/67386612/121611894-f39e4e80-ca1e-11eb-9d63-d6e261816c4e.png)
+
+This took me early-mornings and nights to [grok](https://en.wikipedia.org/wiki/Grok). This is the main reason why I desired to share it 
+not only by the code, but with an explanatory document to help other fellow bioinformatician to cope with the academic life.
 
