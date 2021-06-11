@@ -5,7 +5,7 @@ title: "Analysis of taxonomic assignation data from a Covid project"
 
 ---
 
-# Covid project. Correlation of mouth micorbiome diversity with covid infection
+# Covid project. Correlation of mouth micorbiome diversity with SARS-CoV-2 infection
 
 ![image](https://user-images.githubusercontent.com/67386612/121607065-01e76d00-ca15-11eb-9a62-94f5b034646a.png)
 
