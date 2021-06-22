@@ -1,0 +1,16 @@
+#PBS -q default
+#PBS -l nodes=1:ppn=8,walltime=9:59:59,vmem=32gb,mem=32gb
+#PBS -N check${prefix}
+#PBS -V
+#PBS -o 3check${prefix}.out
+#PBS -e 3check${prefix}.err
+
+#Go to the path containing your bins 
+cd $path/metabat
+
+#Load the module with the necessary to run the CheckM tests
+module load CheckM/1.1.3 Prodigal/2.6.2 hmmer/3.1b2
+
+#Run the CheckM taxonomy work flow to obtain the statistics about your bins on the hypothesis they are from the Bacteria domain
+#Make sure that the extention, -x, of your bins coincide, in this case is fa
+checkm taxonomy_wf domain Bacteria -t 8 -x fa . checkm/

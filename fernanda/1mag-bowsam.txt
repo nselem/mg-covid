@@ -1,0 +1,25 @@
+#PBS -N bowtie2
+#PBS -q default
+#PBS -l nodes=1:ppn=8,mem=24g,vmem=24g,walltime=99:00:00
+#PBS -e bowtiebuild.err
+#PBS -o bowtiebuild.out
+#PBS -V
+
+#Go to the $PATH to files with contigs from IDBA and with the reads you used to assemble the contigs
+cd $PATH
+
+#Load the module with bowtie 
+module load bowtie2/2.3.5.1
+
+#Build the bowtie index base with the contigs of idba and asign ${PREFIX} name to the indexes
+bowtie2-build idba-ud/contig.fa bowtie/${PREFIX}.ind
+
+#Map the $READS1 and $READS2 to the index base and name with the ${PREFIX} the output 
+bowtie2 -p 8 -x bowtie/${PREFIX}.ind -1 $READS2 -2 $READS2 -S bowtie/${PREFIX}.map.sam
+
+#Go to the new working directory
+cd bowtie${PREFIX}/
+
+#Use sam tools to sort the mapped files and save in a sam file
+samtools sort -o $PREFIX.map.sorted.bam -O bam $PREFIX.map.sam
+

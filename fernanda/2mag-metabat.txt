@@ -1,0 +1,25 @@
+#PBS -N MetaBat2-bin
+#PBS -q default
+#PBS -l nodes=1:ppn=8,mem=32g,vmem=32g,walltime=99:00:00
+#PBS -e metabat.err
+#PBS -o metabat.out
+#PBS -V
+
+#Go to the path that contains the IDBA contig file, contig.fa, and the reads used to assemble it, $READS1 and $READS2
+#This path should also contain the results from bowtie and samtools in a directory called bowtie
+cd $path
+
+#Load the module with the binner metabat
+module load metabat/2.13
+
+#Make a directory for the results from metabat
+mkdir metabat/
+
+#Make a read depth file, that will be used to bin the reads, and can also be used to asses quality
+#To make the read depth file you will need the mapped reads file, ${prefix}.map.sorted.bam
+jgi_summarize_bam_contig_depths --outputDepth metabat/${prefix}depth.txt bowtie/${prefix}.map.sorted.bam
+
+#Bin the reads in the contig.fa file using the depth file, ${prefix}depth.txt, previously produced
+metabat2 --saveCls -i contig.fa -a bowtie/${prefix}depth.txt -o metabat/${prefix}bin -m 2000  --maxEdges 600
+
+
