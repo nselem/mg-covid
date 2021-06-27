@@ -7,7 +7,7 @@ path=$(pwd)
 sign='$'
 
 cat > 1bowsam-${prefix}.sh << EOF
-#PBS -N bowtie2
+#PBS -N bowtie${prefix}
 #PBS -q default
 #PBS -l nodes=1:ppn=8,mem=24g,vmem=24g,walltime=99:00:00
 #PBS -e 1bowsam${prefix}.err
@@ -16,9 +16,7 @@ cat > 1bowsam-${prefix}.sh << EOF
 
 cd $path
 
-module load bowtie2/2.3.5.1
-
-module load samtools/1.9
+module load bowtie2/2.3.5.1 samtools/1.9
 
 mkdir bowtie/
 
@@ -31,7 +29,7 @@ samtools sort -o bowtie/${prefix}.map.sorted.bam -O bam bowtie/${prefix}.map.sam
 EOF
 
 cat > 2metabat-${prefix}.sh << EOF
-#PBS -N MetaBat2-bin
+#PBS -N MetaBat${prefix}
 #PBS -q default
 #PBS -l nodes=1:ppn=8,mem=32g,vmem=32g,walltime=99:00:00
 #PBS -e 2metabat${prefix}.err
@@ -46,7 +44,7 @@ mkdir metabat/
 
 jgi_summarize_bam_contig_depths --outputDepth metabat/${prefix}depth.txt bowtie/${prefix}.map.sorted.bam
 
-metabat2 --saveCls -i contig.fa -a metabat/${prefix}depth.txt -o metabat/${prefix}bin -m 2000  --maxEdges 600
+metabat2 --saveCls -i contig.fa -a metabat/${prefix}depth.txt -o metabat/${prefix}bin -m 2500 --maxEdges 600 --noAdd --seed 4
 
 EOF
 
